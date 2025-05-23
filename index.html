@@ -8,26 +8,45 @@
 <body>
     <header>
          <h1>project Management Dashboard</h1>
-         <button id="logout">logout</button>
+         <button id="btn-logout">logout</button>
     </header>
     <div class="container">
+        <div id="auth-section">
+            <div class="auth" id="login-card">
+                <h2>Login</h2>
+           <input type="text" id="login-username" placeholder="enter a username"/>
+           <input type="password" id="login-password" placeholder="enter password"/>
+           <button id="login">login</button>
+           <p> No account ?<a href="#" id="link-to-signup">signup</a></p>
+        </div>
+
+        <div id="signup-card" class="auth">
+            <h2>signup</h2>
+           <input type="text" id="signup-username" placeholder="enter a username"/>
+           <input type="password" id="signup-password" placeholder="enter password"/>
+           <input type="confirm-password" id="confirm-password" placeholder="confirm password"/>
+           <button id="signup">signup</button>
+           <p> Already have an account ?<a href="#" id="link-to-login">Login</a></p>
+        </div>
+        </div>
+        
     <aside class="sidebar">
         <h2>projects</h2>
         <ul id="projects-lists">
-            <li></li>
-            <li></li>
+           
         </ul>
        <button id="add">+add project</button>
        </aside>
        <main class="main-content">
-       <section id="Dashboard">
+       
+        <section id="Dashboard">
        <h2>Welcome!</h2>
         <p>Select a project to view tasks.</p>
        </section>
-
-
     </main>
+
     </div>
     <script src="scripts/scripts.js"></script>
+    <script src="scripts/auth.js"></script>
 </body>
 </html>
