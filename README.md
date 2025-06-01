@@ -11,7 +11,7 @@ Follows modular code structure with separate files for authentication, tasks, dr
 User Actions:
 • Secure Login/Signup with `bcrypt.js` password hashing
 • Auto logout after 15 minutes of inactivity
-• Task Management (Create, Edit, Delete, Update)
+• Task Management CRUD(Create, Edit, Delete, Update,Save)
 • Task Search by keyword
 • Drag-and-drop to reorder tasks
 • Data stored per user in `localStorage`
@@ -23,9 +23,7 @@ Install Dependencies (Jest): npm install
 Run Tests: npm test
 Access Application: Open your web browser and navigate to
 http://localhost:5500 access the application.
-
-5. Install Dependencies (Jest): npm install
-6. Run Tests: npm test
-
+Install Dependencies (Jest): npm install
+Run Tests: npm test
 Results:
 The application allows secure login, task and project management, and theme switching. Tasks can be created, edited, searched, reordered via drag-and-drop, and persisted per user using localStorage. Unit tests confirm functionality with Jest.
