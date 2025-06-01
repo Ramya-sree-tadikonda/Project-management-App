@@ -1,52 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Management Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Management Dashboard</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
-    <header>
-         <h1>project Management Dashboard</h1>
-         <button id="btn-logout">logout</button>
-    </header>
-    <div class="container">
-        <div id="auth-section">
-            <div class="auth" id="login-card">
-                <h2>Login</h2>
-           <input type="text" id="login-username" placeholder="enter a username"/>
-           <input type="password" id="login-password" placeholder="enter password"/>
-           <button id="login">login</button>
-           <p> No account ?<a href="#" id="link-to-signup">signup</a></p>
-        </div>
+  <header style="display:none;" id="header">
+    <h1>Project Management Dashboard</h1>
+    <button id="btn-logout">Logout</button>
+  </header>
 
-        <div id="signup-card" class="auth">
-            <h2>signup</h2>
-           <input type="text" id="signup-username" placeholder="enter a username"/>
-           <input type="password" id="signup-password" placeholder="enter password"/>
-           <input type="password" id="confirm-password" placeholder="confirm password"/>
-           <button id="signup">signup</button>
-           <p> Already have an account ?<a href="#" id="link-to-login">Login</a></p>
-        </div>
-        </div>
-        
-    <aside class="sidebar">
-        <h2>projects</h2>
-        <ul id="projects-lists">
-           
-        </ul>
-       <button id="add">+add project</button>
-       </aside>
-       <main class="main-content">
-       
-        <section id="Dashboard">
-       <h2>Welcome!</h2>
-        <p>Select a project to view tasks.</p>
-       </section>
-    </main>
-
+  <div id="auth-section" style="display:flex;">
+    <div class="auth" id="login-card">
+      <h2>Login</h2>
+      <input type="text" id="login-username" placeholder="Enter a username" />
+      <input type="password" id="login-password" placeholder="Enter password" />
+      <button id="login">Login</button>
+      <p>No account? <a href="#" id="link-to-signup">Signup</a></p>
     </div>
-    <script src="scripts/scripts.js"></script>
-    <script src="scripts/auth.js"></script>
+
+    <div id="signup-card" class="auth" style="display:none;">
+      <h2>Signup</h2>
+      <input type="text" id="signup-username" placeholder="Enter a username" />
+      <input type="password" id="signup-password" placeholder="Enter password" />
+      <input type="password" id="confirm-password" placeholder="Confirm password" />
+      <button id="signup">Signup</button>
+      <p>Already have an account? <a href="#" id="link-to-login">Login</a></p>
+    </div>
+  </div>
+
+  <div class="container" style="display:none;" id="app-container">
+    <aside class="sidebar">
+      <h2>Projects</h2>
+      <ul id="projectList"></ul>
+      <button id="addProjectBtn">+ Add Project</button>
+    </aside>
+
+    <main class="main-content">
+      <h3 id="currentProjectName">Select a project</h3>
+
+      <div id="taskFilters">
+        <input type="text" id="searchQuery" placeholder="Search tasks..." />
+        <ul id="searchSuggestions" class="suggestion-list"></ul>
+
+        <select id="filterStatus">
+          <option value="">Project Status</option>
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+      <select id="filterPriority">
+          <option value="">project level</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select> 
+      </div>
+          
+      <ul id="taskList" class="task-list"></ul>
+
+      <input type="text" id="newTaskName" placeholder="New task name" />
+      <select id="taskStatus">
+        <option value="status">Status</option>
+        <option value="pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <input type="date" id="taskDueDate" />
+      <select id="taskPriority">
+        <option value="priority">Priority</option>
+        <option value="low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <button id="addTaskBtn">+ Add Task</button>
+    <template id="task-item-template">
+  <li class="task-item" draggable="true">
+    <span class="task-name"></span>
+    <span class="task-status">Status </span>
+    <span class="task-priority">Priority: </span>
+    <span class="task-dueDate">Due: </span>
+    <button class="edit-task" title="Edit Task">✏️</button>
+    <button class="delete-task" title="Delete Task">🗑️</button>
+  </li>
+</template>
+
+    </main>
+  </div>
+  <div>
+  <button id="btn-toggle-dark">Dark Mode</button>
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
+  <script type="module" src="dashboard/utils.js"></script>
+<script type="module" src="main.js"></script>
+
 </body>
 </html>

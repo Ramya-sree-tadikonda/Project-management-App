@@ -1,0 +1,20 @@
+// Authentication & Session
+import { initAuth } from './scripts/auth.js';
+import { sessionTimeout } from './scripts/session.js';
+import { storage } from './scripts/storage.js';
+import { initScripts } from './scripts/project-ui.js';
+import { setupTaskSearch } from './dashboard/search.js';
+import { enableDragAndDrop } from './dashboard/taskDragDrop.js';
+import { renderTasks } from './dashboard/tasks.js';
+import { setupTaskActions } from './dashboard/taskActions.js';
+import { showConfirmation } from './ui/modals.js';
+import { filterTasks } from './ui/searchtasks.js';
+import  {sortTasks} from  './ui/sort.js';
+initAuth();
+sessionTimeout();
+initScripts();  
+setupTaskSearch();
+enableDragAndDrop('#taskList'); 
+renderTasks();
+setupTaskActions();      
+console.log("All modules initialized from main.js");

@@ -1,0 +1,19 @@
+{
+  "name": "project-management-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "cross-env": "^7.0.3",
+    "jest": "^30.0.0-beta.3",
+    "jest-environment-jsdom": "^30.0.0-beta.3"
+  }
+}
