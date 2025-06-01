@@ -30,7 +30,8 @@ User Actions:
 
 • UI refreshes to default (welcome screen) if projects are deleted.
 
-Access Application: Open your web browser and navigate to http://localhost:5500 access the application.
+Access Application: Open web browser and navigate to http://localhost:5500 access the application.
+
 Install Dependencies (Jest): npm install
 
 Run Tests: npm test
